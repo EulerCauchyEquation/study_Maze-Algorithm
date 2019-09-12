@@ -13,19 +13,19 @@
 
 ## 2. 알고리즘 예시
 3X3 board판을 예로 들겠다. <br>
-외곽은 나갈 수 없으며, 벽으로 막힌 곳은 지나갈 수 없다. 목표지점은 `(3,3)`좌표로, 시작지점은 `(0,0)`으로 세팅한다.<br>
+외곽으로 나갈 수 없으며, 벽으로 막힌 곳은 지나갈 수 없다. 목표지점은 `(3,3)`좌표로, 시작지점은 `(0,0)`으로 세팅한다.<br>
 <img src="/png/png_3.png" width="500" height="509"></img>
 
 ```java
 if( x < 0 || x >= gameboard.length || y < 0 || y >= gameboard.length)
-			// 보드 밖의 좌표이면
-			return false;		
-		if(gameboard[x][y] == VISITED)
-			// 이미 방문한 지점이면
-			return false;		
-		if(gameboard[x][y] == WALL)
-			// 벽으로 막혔으면
-			return false;
+	// 보드 밖의 좌표이면
+	return false;		
+if(gameboard[x][y] == VISITED)
+	// 이미 방문한 지점이면
+	return false;		
+if(gameboard[x][y] == WALL)
+	// 벽으로 막혔으면
+	return false;
 ```   
 <br><br>
 
@@ -54,25 +54,25 @@ public static final int BACKTRACKED = 3;
 
 ```java
 switch (dir) {
-			case 0:
-				// 북쪽
-				x -=1;
-				break;
-			case 1:
-				// 동쪽
-				y += 1;
-				break;
-			case 2:
-				// 남쪽
-				x += 1;
-				break;
-			case 3:
-				// 서쪽
-				y -= 1;
-				break;
-			default:
-				break;
-		}
+	case 0:
+		// 북쪽
+		x -=1;
+		break;
+	case 1:
+		// 동쪽
+		y += 1;
+		break;
+	case 2:
+		// 남쪽
+		x += 1;
+		break;
+	case 3:
+		// 서쪽
+		y -= 1;
+		break;
+	default:
+		break;
+}
 ```
 <br>
 
