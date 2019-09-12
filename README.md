@@ -97,7 +97,7 @@ cur = move(cur, (d + 2) % 4, cur.step - 1);  /* 돌아왔던 방향으로 이동
 목표지점까지 최단거리 구하는 방법은 모든 경우의 수를 다 탐색한 후 그 중 가장 빠른 방법을 고르는 것이다.<br>
 그러니까 목표지점에 도달할 때마다 우선순위 큐(Priority Queue)에 넣은 후, 더이상 경우의 수가 나타나지 않아서<br>
 loop문이 종료된 후 우선순위 큐에서 pop을 하면 최단거리를 얻을 수 있다.
-<br>
+<br><br>
 현재 코드
 
 ```java
@@ -116,17 +116,19 @@ if(isGoal(cur.fx, cur.fy))
 
 ```java
 gameboard[cur.fx][cur.fy] = BACKTRACKED;
-				if(stack.isEmpty()) {
+	if(stack.isEmpty()) {
 					
-					if(moveCnt.isEmpty())
-						// 나갈 수 있는 방법이 없다
-						return 0;
-					else
-						// 나가는 방법 중 최단 거리 반환
-						return moveCnt.poll();
-				}
+		if(moveCnt.isEmpty())
+			// 나갈 수 있는 방법이 없다
+			return 0;
+		else
+			// 나가는 방법 중 최단 거리 반환
+			return moveCnt.poll();
+	}
 ```
 이렇게 하여 루프문을 종료시킨다.
+
+
 
 ---------------------------------
 
